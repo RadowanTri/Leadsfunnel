@@ -19,7 +19,37 @@ $(document).ready(function($) {
     });
 
 	  
-	
+	// featureator-slider
+    var $featureatorSlider = $(".feature-carousel");
+    $featureatorSlider.owlCarousel({
+        loop: true,
+        nav: false,
+        // navText: [
+        //     '<i class="fa fa-long-arrow-alt-left"></i>',
+        //     '<i class="fas fa-long-arrow-alt-right"></i>',
+        // ],
+        dots: false,
+        autoplayTimeout: 7000,
+        autoplay: true,
+        margin: 30,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            576: {
+                items: 2,
+            },
+            768: {
+                items: 3,
+            },
+            992: {
+                items: 4,
+            },
+            1399: {
+                items: 4,
+            },
+        }
+    });
 
      // Magnific popup
      $('.popup-youtube').magnificPopup({
@@ -65,5 +95,14 @@ let x = setInterval(function () {
     }
 }, 1000);
 
+var menuIcon = document.querySelector(".menu-icon");
+var sidebar = document.querySelector(".sidebar");
+var container = document.querySelector(".container");
+
+menuIcon.onclick = function () {
+sidebar.classList.toggle("small-sidebar");
+container.classList.toggle("large-container");
+
+}
 
 });
